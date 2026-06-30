@@ -1,4 +1,5 @@
 import pandas as pd
+import numpy as np
 
 csv_file = "files\\sales_dirty.csv"
 df = pd.read_csv(csv_file)
@@ -16,9 +17,9 @@ df_copy = df_copy.dropna(subset=['value'])
 df_copy = df_copy[df_copy['value'] < 100000]
 
 #EXPENSES
-df_copy['expenses'] = df_copy['expenses'].replace(',',value='.')
-df_copy['expenses'] = df_copy['expenses'].replace('-',value='')
-df_copy['expenses'] = df_copy['expenses'].replace(r'[^\w\s\.]','',regex=True)
+df_copy['expenses'] = df_copy['expenses'].replace(r'[^\w\s\.\,]','',regex=True)
+df_copy['expenses'] = df_copy['expenses'].replace(',','.')
+df_copy['expenses'] = df_copy['expenses'].replace('-','')
 df_copy['expenses'] = pd.to_numeric(df_copy['expenses'], errors='coerce')
 df_copy = df_copy.dropna(subset=['expenses'])
 df_copy = df_copy[df_copy['expenses'] < 100000]
