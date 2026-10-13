@@ -2,6 +2,10 @@
 
 This project consists of a Python-based ETL (Extract, Transform, Load) script that extracts public data from the JSONPlaceholder API, performs transformations and aggregations using Pandas, and loads the consolidated results into a PostgreSQL database using the `psycopg` library.
 
+## What was the request?
+
+The main reason I created that pipeline was to answer a simple question, "how many interactions was achieved by each post by each user from each company?"
+
 ## Process Overview
 
 1. **Extract:** User, post, and comment data are fetched from the JSONPlaceholder REST API and saved locally as CSV files.
