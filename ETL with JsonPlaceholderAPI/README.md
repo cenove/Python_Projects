@@ -17,19 +17,19 @@ Additionally, you need a running PostgreSQL instance and a target table created 
 
 Before running the script, update your PostgreSQL database credentials in the connection section:
 
-'''python
+```python
 con = psycopg.connect(
     host='localhost', # or your server host/IP
     dbname='DATABASE_NAME',
     user='postgres',
     password='USER_PASSWORD'
 )
-'''
+```
 
 Make sure to replace TABLE_NAME with your actual table name inside the csv_sender() function:
 
-'''SQL
+```SQL
 COPY TABLE_NAME (user_id, user_name, company, post_id, total_comments) 
 FROM STDIN 
 WITH (FORMAT CSV, HEADER true, DELIMITER ',');
-'''
+```
