@@ -10,7 +10,7 @@ This project consists of a Python-based ETL (Extract, Transform, Load) script th
 
 ## Prerequisites
 
-The prerequisites can be downloaded using the 'requirements.txt' attached to the repository.
+The prerequisites can be downloaded using the `requirements.txt` attached to the repository.
 Additionally, you need a running PostgreSQL instance and a target table created with columns matching the output schema.
 
 ## Configuration
